@@ -21,6 +21,28 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!open) return undefined
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 1200) setOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   const close = () => setOpen(false)
 
   return (
@@ -41,15 +63,17 @@ export default function Navbar() {
             type="button"
             className={`nav__toggle ${open ? 'nav__toggle--open' : ''}`}
             onClick={() => setOpen((o) => !o)}
-            aria-label="Toggle navigation"
+            aria-label={open ? 'Close navigation' : 'Toggle navigation'}
+            aria-expanded={open}
+            aria-controls="site-nav"
           >
             <span></span>
             <span></span>
             <span></span>
           </button>
 
-          <nav>
-            <ul className={`nav__links ${open ? 'nav__links--open' : ''}`}>
+          <nav aria-label="Primary">
+            <ul id="site-nav" className={`nav__links ${open ? 'nav__links--open' : ''}`}>
               {LINKS.map((l) => (
                 <li key={l.label}>
                   <NavLink

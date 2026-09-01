@@ -50,6 +50,7 @@ export default function Hero() {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
     const t = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 7000)
     return () => clearInterval(t)
   }, [])

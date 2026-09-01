@@ -85,7 +85,7 @@ export default function RigPage() {
                       <Icon name="arrow" size={17} />
                     </span>
                   </Link>
-                  <Link className="btn btn--ghost" to="/services">
+                  <Link className="btn btn--ghost--ink" to="/services">
                     Leasing Services
                   </Link>
                 </div>

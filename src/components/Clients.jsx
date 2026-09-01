@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 import Reveal from './Reveal.jsx'
 
+const REDUCED = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const SPOTLIGHT = [
   {
     name: 'NNPCL',
@@ -78,7 +81,7 @@ export default function Clients() {
   const manualRef = useRef(false)
 
   useEffect(() => {
-    if (!playing) return undefined
+    if (!playing || REDUCED()) return undefined
     const t = setInterval(() => {
       if (!hoverRef.current) {
         setActive((a) => (a + 1) % SPOTLIGHT.length)
@@ -142,26 +145,23 @@ export default function Clients() {
 
       <div className="spot__marquee" aria-label="Select a client or partner">
         <div className="spot__track">
-          {[...SPOTLIGHT, ...SPOTLIGHT].map((c, i) => {
-            const idx = i % SPOTLIGHT.length
-            return (
-              <button
-                type="button"
-                key={`${c.name}-${i}`}
-                className={`spot-btn ${idx === active ? 'spot-btn--active' : ''}`}
-                onClick={() => select(idx)}
-                onMouseEnter={() => setActive(idx)}
-                aria-pressed={idx === active}
-              >
-                <span className="spot-btn__num">{String(idx + 1).padStart(2, '0')}</span>
-                <b className="spot-btn__mark">{c.mark}</b>
-                <span>
-                  <span className="spot-btn__name">{c.name}</span>
-                  <span className="spot-btn__tag">{c.role}</span>
-                </span>
-              </button>
-            )
-          })}
+          {SPOTLIGHT.map((c, i) => (
+            <button
+              type="button"
+              key={c.name}
+              className={`spot-btn ${i === active ? 'spot-btn--active' : ''}`}
+              onClick={() => select(i)}
+              onMouseEnter={() => setActive(i)}
+              aria-pressed={i === active}
+            >
+              <span className="spot-btn__num">{String(i + 1).padStart(2, '0')}</span>
+              <b className="spot-btn__mark">{c.mark}</b>
+              <span>
+                <span className="spot-btn__name">{c.name}</span>
+                <span className="spot-btn__tag">{c.role}</span>
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
