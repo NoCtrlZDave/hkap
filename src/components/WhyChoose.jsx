@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Reveal from './Reveal.jsx'
 import Icon from './icons.jsx'
 
@@ -9,7 +10,7 @@ const REASONS = [
   'Established relationships with leading operators including NNPCL, Seplat Energy and Sahara Energy.',
 ]
 
-export default function WhyChoose() {
+export default function WhyChoose({ count = REASONS.length }) {
   return (
     <section id="why" className="section section--tint">
       <div className="container">
@@ -26,15 +27,15 @@ export default function WhyChoose() {
                 compliance and a long track record — so your operation has one
                 dependable partner from start to finish.
               </p>
-              <a className="manifesto__link" href="#contact" style={{ color: 'var(--copper-600)', borderColor: 'var(--copper-500)' }}>
+              <Link className="manifesto__link" to="/contact" style={{ color: 'var(--copper-600)', borderColor: 'var(--copper-500)' }}>
                 Talk to our team
                 <Icon name="arrow" size={15} />
-              </a>
+              </Link>
             </div>
           </Reveal>
 
           <div>
-            {REASONS.map((r, i) => (
+            {REASONS.slice(0, count).map((r, i) => (
               <Reveal key={r} delay={i * 90}>
                 <div className="why__reason">
                   <span className="why__num">0{i + 1}</span>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { images } from './assets.js'
 import Reveal from './Reveal.jsx'
 import Icon from './icons.jsx'
@@ -11,7 +12,7 @@ const SERVICES = [
   { title: 'QHSE & Governance', text: 'Safe, compliant, accountable operations anchored in professional ethics.', img: images.catering, cta: 'Our standards' },
 ]
 
-export default function Services() {
+export default function Services({ itemCount = SERVICES.length, cardTo = '/services' }) {
   return (
     <section id="services" className="section">
       <div className="container">
@@ -29,9 +30,9 @@ export default function Services() {
         </div>
 
         <div className="svc__grid">
-          {SERVICES.map((s, i) => (
+          {SERVICES.slice(0, itemCount).map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 110}>
-              <a className="svc-card" href="#contact" aria-label={s.cta}>
+              <Link className="svc-card" to={cardTo} aria-label={s.cta}>
                 <div className="svc-card__media">
                   <img className="svc-card__img" src={s.img} alt={s.title} />
                   <div className="svc-card__veil"></div>
@@ -46,7 +47,7 @@ export default function Services() {
                   </h3>
                   <p className="svc-card__desc">{s.text}</p>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

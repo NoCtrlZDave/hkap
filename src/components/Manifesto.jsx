@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { images } from './assets.js'
 import Icon from './icons.jsx'
 import Reveal from './Reveal.jsx'
@@ -19,10 +20,10 @@ export default function Manifesto() {
             delivering safe, reliable and sustainable industrial and energy
             solutions.
           </p>
-          <a className="manifesto__link" href="#mission">
+          <Link className="manifesto__link" to="/about">
             View our mission
             <Icon name="arrow" size={15} />
-          </a>
+          </Link>
         </Reveal>
 
         <Reveal variant="right" delay={120}>

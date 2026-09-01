@@ -1,44 +1,21 @@
 import { useEffect, useState } from 'react'
-import Icon from './icons.jsx'
+import { NavLink } from 'react-router-dom'
 
-const SERVICES = [
-  'Oil Rig Leasing',
-  'Drilling Operations',
-  'Metal Scrap & Recycling',
-  'Waste Handling & Disposal',
-  'Marine Salvage',
-]
-
-const SECTIONS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'mission', label: 'Mission' },
-  { id: 'services', label: 'Services' },
-  { id: 'rig', label: 'The Rig' },
-  { id: 'why', label: 'Why Us' },
-  { id: 'team', label: 'Team' },
-  { id: 'contact', label: 'Contact' },
+const LINKS = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/rig', label: 'The Rig' },
+  { to: '/leadership', label: 'Leadership' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
   const [solid, setSolid] = useState(false)
-  const [active, setActive] = useState('home')
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY
-      setSolid(y > 40)
-
-      let current = 'home'
-      for (const section of SECTIONS) {
-        const el = document.getElementById(section.id)
-        if (el && el.getBoundingClientRect().top <= 140) {
-          current = section.id
-        }
-      }
-      setActive(current)
-    }
+    const onScroll = () => setSolid(window.scrollY > 40)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -48,25 +25,9 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="topbar">
-        <div className="container topbar__inner">
-          <div className="topbar__group">
-            <span className="topbar__item">
-              <Icon name="phone" size={14} />
-              <a href="tel:+2348170592700">+234 817 059 2700</a>
-            </span>
-            <span className="topbar__item">
-              <Icon name="mail" size={14} />
-              <a href="mailto:ray@hkaplimited.com">ray@hkaplimited.com</a>
-            </span>
-          </div>
-          <span className="topbar__tag">RC 464616 &middot; Lagos, Nigeria</span>
-        </div>
-      </div>
-
       <header className={`navbar ${solid ? 'navbar--solid' : ''}`}>
         <div className="container navbar__inner">
-          <a href="#home" className="brand" onClick={close}>
+          <NavLink to="/" className="brand" onClick={close}>
             <span className="brand__mark">H</span>
             <span>
               <span className="brand__text">
@@ -74,7 +35,7 @@ export default function Navbar() {
               </span>
               <div className="brand__sub">Recycling &amp; Energy</div>
             </span>
-          </a>
+          </NavLink>
 
           <button
             type="button"
@@ -89,75 +50,25 @@ export default function Navbar() {
 
           <nav>
             <ul className={`nav__links ${open ? 'nav__links--open' : ''}`}>
-              {SECTIONS.slice(0, 4).map((s) => (
-                <li key={s.id}>
-                  <a
-                    className={`nav__link ${active === s.id && !open ? 'nav__link--active' : ''}`}
-                    href={`#${s.id}`}
+              {LINKS.map((l) => (
+                <li key={l.label}>
+                  <NavLink
+                    to={l.to}
+                    end={l.end}
+                    className={({ isActive }) =>
+                      `nav__link ${isActive && !open ? 'nav__link--active' : ''}`
+                    }
                     onClick={close}
                   >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-
-              <li className="nav__group">
-                <a
-                  className={`nav__link nav__group-toggle ${active === 'why' || active === 'team' || active === 'clients' ? 'nav__link--active' : ''}`}
-                  href="#why"
-                  onClick={close}
-                >
-                  Company
-                </a>
-                <div className="nav__dropdown">
-                  <a href="#why" onClick={close}>
-                    Why Choose HKAP
-                  </a>
-                  <a href="#team" onClick={close}>
-                    Leadership Team
-                  </a>
-                  <a href="#clients" onClick={close}>
-                    Clients &amp; Partners
-                  </a>
-                </div>
-              </li>
-
-              <li className="nav__group">
-                <a
-                  className={`nav__link nav__group-toggle ${active === 'services' || active === 'rig' ? 'nav__link--active' : ''}`}
-                  href="#services"
-                  onClick={close}
-                >
-                  What We Do
-                </a>
-                <div className="nav__dropdown">
-                  {SERVICES.map((s) => (
-                    <a key={s} href="#services" onClick={close}>
-                      {s}
-                    </a>
-                  ))}
-                  <a href="#rig" onClick={close}>
-                    The TIKVAH Rig
-                  </a>
-                </div>
-              </li>
-
-              {SECTIONS.slice(7).map((s) => (
-                <li key={s.id}>
-                  <a
-                    className={`nav__link ${active === s.id && !open ? 'nav__link--active' : ''}`}
-                    href={`#${s.id}`}
-                    onClick={close}
-                  >
-                    {s.label}
-                  </a>
+                    {l.label}
+                  </NavLink>
                 </li>
               ))}
 
               <li>
-                <a className="nav__link nav__link--cta" href="#contact" onClick={close}>
+                <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
                   Start a Project
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>
