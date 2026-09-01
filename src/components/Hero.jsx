@@ -53,9 +53,6 @@ export default function Hero() {
     return () => clearInterval(t)
   }, [])
 
-  const prev = () => setIndex((i) => (i - 1 + SLIDES.length) % SLIDES.length)
-  const next = () => setIndex((i) => (i + 1) % SLIDES.length)
-
   return (
     <section id="home" className="hero">
       {SLIDES.map((slide, i) => (
