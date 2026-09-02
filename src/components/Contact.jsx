@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { MapPin, Phone, Mail, Hash } from 'lucide-react'
 import Reveal from './Reveal.jsx'
 import Icon from './icons.jsx'
 
@@ -33,7 +34,7 @@ export default function Contact() {
 
               <div className="contact-item">
                 <span className="contact-item__ic">
-                  <Icon name="pin" size={20} />
+                  <MapPin size={20} strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="contact-item__label">Registered Office</div>
@@ -45,7 +46,7 @@ export default function Contact() {
 
               <div className="contact-item">
                 <span className="contact-item__ic">
-                  <Icon name="phone" size={20} />
+                  <Phone size={20} strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="contact-item__label">Phone</div>
@@ -57,7 +58,7 @@ export default function Contact() {
 
               <div className="contact-item">
                 <span className="contact-item__ic">
-                  <Icon name="mail" size={20} />
+                  <Mail size={20} strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="contact-item__label">Email</div>
@@ -69,7 +70,7 @@ export default function Contact() {
 
               <div className="contact-item">
                 <span className="contact-item__ic">
-                  <Icon name="hash" size={20} />
+                  <Hash size={20} strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="contact-item__label">RC Number</div>
