@@ -8,7 +8,7 @@ INCORPORATED	20,000 ft
 RIG DEPTH RATING	95
 CREW CAPACITY
 EXECUTIVE SUMMARY
-HKAP Limited is a Nigerian-incorporated company with over 24 years of experience in industrial recycling and metal scrap management, now expanding into the upstream oil and gas sector through oil rig leasing and drilling operations. The company owns and operates TIKVAH, a heavy-duty swamp barge drilling rig (formerly Lonestar 203) manufactured in 2008, currently moored at Sapele, Delta State.
+HKAP Limited is a Nigerian-incorporated company with over 24 years of experience in industrial recycling and metal scrap management, now expanding into the upstream oil and gas sector through oil rig leasing and drilling operations. The company owns and operates TIKVAH, a heavy-duty swamp barge drilling rig manufactured in 2008, currently moored at Sapele, Delta State.
 TIKVAH is a rotary-driven rig with a depth rating of 20,000 ft, capable of drilling both vertical and horizontal wells. HKAP Limited offers oil rig leasing services to reputable operators including the Nigerian National Petroleum Company Limited (NNPCL), Seplat Energy, Sahara Energy, and other established players in the Nigerian oil and gas industry.
 Guided by strong corporate governance, professional ethics and a commitment to client satisfaction, HKAP Limited is supported by an experienced management team and technical workforce dedicated to delivering safe, reliable and sustainable industrial and energy solutions.
 ABOUT US

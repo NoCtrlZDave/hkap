@@ -114,7 +114,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <span>&copy; {new Date().getFullYear()} HKAP Limited. All rights reserved.</span>
-          <span>TIKVAH &mdash; formerly Lonestar 203 / Pride of Africa.</span>
+          <span>TIKVAH &mdash; Pride of Africa.</span>
         </div>
       </div>
 

@@ -24,7 +24,7 @@ const TIMELINE = [
   {
     year: '2019',
     title: 'TIKVAH acquisition',
-    text: 'HKAP acquires the TIKVAH heavy-duty swamp barge drilling rig — formerly Lonestar 203 / Pride of Africa — through transparent, competitive bidding, with a clean, unencumbered title.',
+    text: 'HKAP acquires the TIKVAH heavy-duty swamp barge drilling rig — formerly Pride of Africa — through transparent, competitive bidding, with a clean, unencumbered title.',
   },
   {
     year: 'Today',

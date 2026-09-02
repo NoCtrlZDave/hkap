@@ -61,7 +61,7 @@ export default function Home() {
               </Reveal>
               <Reveal variant="right" delay={120}>
                 <p className="rig__desc">
-                  TIKVAH — formerly Lonestar 203 / Pride of Africa — is a
+                  TIKVAH — Pride of Africa — is a
                   heavy-duty swamp barge rig built for the riverine, estuarine
                   and shallow-water environments of the Niger Delta, drilling
                   production wells for operators across the region.

@@ -398,6 +398,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.35s var(--ease-out);
 }
 
+.nav__link-arrow {
+  display: none;
+}
+
 .nav__link:hover,
 .nav__link--active {
   color: #fff;
@@ -437,6 +441,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__backdrop {
+  display: none;
+}
+
+.nav__panel-head {
   display: none;
 }
 
@@ -572,6 +580,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .nav__panel .nav__link-arrow {
+    display: inline-flex;
     font-size: 1.1rem;
     color: var(--copper-500);
     opacity: 0.5;

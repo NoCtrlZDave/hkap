@@ -68,7 +68,7 @@ export default function RigPage() {
               </Reveal>
               <Reveal variant="up" delay={120}>
                 <p className="rig__desc">
-                  <strong>TIKVAH</strong> — formerly Lonestar 203 / Pride of
+                  <strong>TIKVAH</strong> — formerly Pride of
                   Africa — was acquired through a transparent, competitive
                   bidding process. It carries a clean, unencumbered title and a
                   proven track record of drilling production wells for major

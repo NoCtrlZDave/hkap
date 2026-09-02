@@ -38,14 +38,6 @@ const SPOTLIGHT = [
       'Crew operations are benchmarked against the drilling practices of the International Association of Drilling Contractors.',
   },
   {
-    name: 'Lonestar Heritage',
-    mark: 'LON',
-    tag: 'Rig Heritage',
-    role: 'Niger Delta Wells',
-    blurb:
-      'The TIKVAH — formerly Lonestar 203 — carries a proven heritage of production-well drilling in the Niger Delta.',
-  },
-  {
     name: 'Pride of Africa',
     mark: 'POA',
     tag: 'Rig Heritage',
@@ -60,7 +52,6 @@ const MARQUEE_ONE = [
   { name: 'Seplat Energy', mark: 'SE' },
   { name: 'Sahara Energy', mark: 'SH' },
   { name: 'IADC Standards', mark: 'IADC' },
-  { name: 'Lonestar 203', mark: 'LON' },
   { name: 'Pride of Africa', mark: 'POA' },
 ]
 
