@@ -62,7 +62,7 @@ export default function Contact() {
                 <div>
                   <div className="contact-item__label">Email</div>
                   <div className="contact-item__value">
-                    <a href="mailto:ray@hkaplimited.com">ray@hkaplimited.com</a>
+                    <a href="mailto:info@hkaplimited.com">info@hkaplimited.com</a>
                   </div>
                 </div>
               </div>
@@ -133,6 +133,21 @@ export default function Contact() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={120}>
+          <div className="contact__map">
+            <iframe
+              title="HKAP Limited location — Ogudu GRA, Lagos"
+              src="https://www.google.com/maps?q=9A+Adeyera+Adeyemo+Street,+Ogudu+GRA,+Lagos,+Nigeria&output=embed"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

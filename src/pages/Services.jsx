@@ -1,8 +1,11 @@
+import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Services from '../components/Services.jsx'
+import ServiceDetail from '../components/ServiceDetail.jsx'
+import { SERVICES } from '../components/servicesData.js'
 import Icon from '../components/icons.jsx'
-import { Link } from 'react-router-dom'
 import { images } from '../components/assets.js'
 
 const RECYCLING_POINTS = [
@@ -20,6 +23,21 @@ const RIG_SVC_POINTS = [
 ]
 
 export default function ServicesPage() {
+  const [active, setActive] = useState(SERVICES[0])
+  const [showDetail, setShowDetail] = useState(true)
+  const detailRef = useRef(null)
+
+  useEffect(() => {
+    if (showDetail && detailRef.current) {
+      detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [active, showDetail])
+
+  const select = (service) => {
+    setActive(service)
+    setShowDetail(true)
+  }
+
   return (
     <>
       <PageHero
@@ -30,7 +48,11 @@ export default function ServicesPage() {
         image={images.drilling}
       />
 
-      <Services cardTo="/contact" />
+      <Services onSelect={select} />
+
+      <div ref={detailRef}>
+        <ServiceDetail key={active.title} service={active} flip={true} onClose={() => setShowDetail(false)} />
+      </div>
 
       <section className="section section--tint">
         <div className="container">

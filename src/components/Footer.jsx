@@ -104,7 +104,7 @@ export default function Footer() {
                 <a href="tel:+2348170592700">+234 817 059 2700</a>
               </li>
               <li>
-                <a href="mailto:ray@hkaplimited.com">ray@hkaplimited.com</a>
+                <a href="mailto:info@hkaplimited.com">info@hkaplimited.com</a>
               </li>
             </ul>
           </div>
