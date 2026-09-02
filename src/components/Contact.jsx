@@ -105,20 +105,21 @@ export default function Contact() {
                   <p>Tell us about your project and we will get right back to you.</p>
                   <form onSubmit={handleSubmit}>
                     <div className="form-field">
-                      <input name="name" type="text" required placeholder="Full name" />
+                      <input name="name" type="text" required placeholder="Full name" aria-label="Full name" />
                     </div>
                     <div className="form-field">
-                      <input name="email" type="email" required placeholder="Email address" />
+                      <input name="email" type="email" required placeholder="Email address" aria-label="Email address" />
                     </div>
                     <div className="form-field">
                       <input
                         name="subject"
                         type="text"
                         placeholder="Subject — rig leasing, recycling, waste management..."
+                        aria-label="Subject"
                       />
                     </div>
                     <div className="form-field">
-                      <textarea name="message" required placeholder="Your message..."></textarea>
+                      <textarea name="message" required placeholder="Your message..." aria-label="Your message"></textarea>
                     </div>
                     <button type="submit" className="btn btn--brand" style={{ width: '100%', justifyContent: 'center' }}>
                       Send Message

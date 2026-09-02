@@ -37,7 +37,7 @@ export default function ServicesPage() {
           <div className="row-split">
             <Reveal variant="left">
               <div className="row-split__media">
-                <img src={images.downhole} alt="Metal scrap and recycling" />
+                <img src={images.downhole} alt="Metal scrap and recycling" loading="lazy" decoding="async" />
               </div>
             </Reveal>
 
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           <div className="row-split row-split--flip">
             <Reveal variant="right" delay={120}>
               <div className="row-split__media">
-                <img src={images.rig} alt="TIKVAH drilling rig services" />
+                <img src={images.rig} alt="TIKVAH drilling rig services" loading="lazy" decoding="async" />
               </div>
             </Reveal>
 

@@ -30,7 +30,7 @@ export default function Leadership() {
           <div className="row-split">
             <Reveal variant="left">
               <div className="row-split__media">
-                <img src={images.news} alt="HKAP technical team" />
+                <img src={images.news} alt="HKAP technical team" loading="lazy" decoding="async" />
               </div>
             </Reveal>
 

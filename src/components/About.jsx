@@ -11,7 +11,7 @@ export default function About() {
         <div className="about__grid">
           <Reveal variant="left">
             <div className="about__media">
-              <img src={images.about} alt="HKAP Limited operations" />
+              <img src={images.about} alt="HKAP Limited operations" loading="lazy" decoding="async" />
               <div className="about__float">
                 <b>
                   <Counter to={2002} duration={1400} />

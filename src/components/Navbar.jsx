@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { images } from './assets.js'
 
 const LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -50,7 +51,7 @@ export default function Navbar() {
       <header className={`navbar ${solid ? 'navbar--solid' : ''}`}>
         <div className="container navbar__inner">
           <NavLink to="/" className="brand" onClick={close}>
-            <span className="brand__mark">H</span>
+            <img className="brand__mark" src={images.logo} alt="HKAP Limited logo" />
             <span>
               <span className="brand__text">
                 HKAP <span>LIMITED</span>

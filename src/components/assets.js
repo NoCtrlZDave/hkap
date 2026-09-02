@@ -1,3 +1,4 @@
+import logo from '../assets/hkap-logo(1).png'
 import img45 from '../assets/WhatsApp Image 2026-09-01 at 13.58.45.jpeg'
 import img46 from '../assets/WhatsApp Image 2026-09-01 at 13.58.46.jpeg'
 import img461 from '../assets/WhatsApp Image 2026-09-01 at 13.58.46 (1).jpeg'
@@ -16,6 +17,7 @@ import img52 from '../assets/WhatsApp Image 2026-09-01 at 13.58.52.jpeg'
 import img53 from '../assets/WhatsApp Image 2026-09-01 at 13.58.53.jpeg'
 
 export const images = {
+  logo,
   hero1: img45,
   hero2: img47,
   hero3: img483,

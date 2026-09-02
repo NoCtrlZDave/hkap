@@ -48,7 +48,7 @@ export default function Home() {
           <div className="rig__grid">
             <Reveal variant="left">
               <div className="rig__media">
-                <img src={images.rig} alt="TIKVAH drilling rig" />
+                <img src={images.rig} alt="TIKVAH drilling rig" loading="lazy" decoding="async" />
               </div>
             </Reveal>
 

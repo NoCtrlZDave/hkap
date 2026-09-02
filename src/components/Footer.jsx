@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Reveal from './Reveal.jsx'
 import Icon from './icons.jsx'
+import { images } from './assets.js'
 
 const SOCIALS = [
   { name: 'LinkedIn', icon: 'linkedin', href: '#' },
@@ -49,7 +50,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__col footer__col--brand">
             <Link to="/" className="brand">
-              <span className="brand__mark">H</span>
+              <img className="brand__mark" src={images.logo} alt="HKAP Limited logo" />
               <span>
                 <span className="brand__text">
                   HKAP <span>LIMITED</span>

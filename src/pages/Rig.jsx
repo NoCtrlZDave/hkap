@@ -55,7 +55,7 @@ export default function RigPage() {
           <div className="rig__grid">
             <Reveal variant="left">
               <div className="rig__media">
-                <img src={images.rig} alt="TIKVAH drilling rig" />
+                <img src={images.rig} alt="TIKVAH drilling rig" loading="lazy" decoding="async" />
               </div>
             </Reveal>
 
@@ -176,7 +176,7 @@ export default function RigPage() {
             {GALLERY.map((g, i) => (
               <Reveal key={i} delay={(i % 3) * 90}>
                 <div className="gallery__item">
-                  <img src={g} alt={`TIKVAH operations ${i + 1}`} />
+                  <img src={g} alt={`TIKVAH operations ${i + 1}`} loading="lazy" decoding="async" />
                 </div>
               </Reveal>
             ))}

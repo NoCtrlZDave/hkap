@@ -34,7 +34,7 @@ export default function Services({ itemCount = SERVICES.length, cardTo = '/servi
             <Reveal key={s.title} delay={(i % 3) * 110}>
               <Link className="svc-card" to={cardTo} aria-label={s.cta}>
                 <div className="svc-card__media">
-                  <img className="svc-card__img" src={s.img} alt={s.title} />
+                  <img className="svc-card__img" src={s.img} alt={s.title} loading="lazy" decoding="async" />
                   <div className="svc-card__veil"></div>
                   <span className="svc-card__num">0{i + 1}</span>
                 </div>

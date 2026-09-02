@@ -28,7 +28,7 @@ export default function Manifesto() {
 
         <Reveal variant="right" delay={120}>
           <div className="manifesto__media">
-            <img src={images.purpose} alt="HKAP operations" />
+            <img src={images.purpose} alt="HKAP operations" loading="lazy" decoding="async" />
           </div>
         </Reveal>
       </div>

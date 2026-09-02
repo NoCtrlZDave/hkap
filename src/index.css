@@ -338,18 +338,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .brand__mark {
   position: relative;
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  background: var(--grad-brand);
-  color: #fff;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 19px;
-  letter-spacing: 0.04em;
-  box-shadow: 0 8px 20px rgba(183, 106, 36, 0.4);
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
 }
 
 .brand__text {
@@ -480,7 +473,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 4px;
     padding: 80px clamp(24px, 7vw, 60px);
     background: linear-gradient(160deg, var(--ink-950), var(--ink-800));
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: transform 0.5s var(--ease-out);
     z-index: 300;
     overflow-y: auto;
