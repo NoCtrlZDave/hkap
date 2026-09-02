@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function Counter({ to, suffix = '', decimals = 0, duration = 1800 }) {
+export default function Counter({ to, suffix = '', decimals = 0, duration = 1800, group = true }) {
   const ref = useRef(null)
   const [value, setValue] = useState(0)
   const started = useRef(false)
@@ -31,6 +31,7 @@ export default function Counter({ to, suffix = '', decimals = 0, duration = 1800
   }, [to, duration])
 
   const formatted = value.toLocaleString('en-US', {
+    useGrouping: group,
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   })

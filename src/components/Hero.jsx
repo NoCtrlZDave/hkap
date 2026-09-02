@@ -41,7 +41,7 @@ const SLIDES = [
 
 const STATS = [
   { to: 24, suffix: '+', label: 'Years in Business' },
-  { to: 2002, suffix: '', label: 'Incorporated' },
+  { to: 2002, suffix: '', label: 'Incorporated', group: false },
   { to: 20000, suffix: ' ft', label: 'Rig Depth Rating' },
   { to: 95, suffix: '', label: 'Crew Capacity' },
 ]
@@ -104,7 +104,7 @@ export default function Hero() {
         {STATS.map((stat, i) => (
           <div className="stat" key={stat.label}>
             <div className="stat__num">
-              <Counter to={stat.to} suffix={stat.suffix} duration={1600 + i * 250} />
+              <Counter to={stat.to} suffix={stat.suffix} duration={1600 + i * 250} group={stat.group !== false} />
             </div>
             <div className="stat__label">{stat.label}</div>
           </div>

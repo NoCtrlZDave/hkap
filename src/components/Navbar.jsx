@@ -60,32 +60,50 @@ export default function Navbar() {
             </span>
           </NavLink>
 
-          <button
-            type="button"
-            className={`nav__toggle ${open ? 'nav__toggle--open' : ''}`}
-            onClick={() => setOpen((o) => !o)}
-            aria-label={open ? 'Close navigation' : 'Toggle navigation'}
-            aria-expanded={open}
-            aria-controls="site-nav"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          {!open && (
+            <button
+              type="button"
+              className="nav__toggle"
+              onClick={() => setOpen(true)}
+              aria-label="Open navigation"
+              aria-expanded={open}
+              aria-controls="site-nav"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          )}
 
-          <nav aria-label="Primary">
-            <ul id="site-nav" className={`nav__links ${open ? 'nav__links--open' : ''}`}>
+          <nav
+            aria-label="Primary"
+            aria-hidden={open ? 'false' : 'true'}
+            className={`nav__panel ${open ? 'nav__panel--open' : ''}`}
+          >
+            <div className="nav__panel-head">
+              <span className="nav__panel-brand">Menu</span>
+              <button
+                type="button"
+                className="nav__close"
+                onClick={close}
+                aria-label="Close navigation"
+              >
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+
+            <ul id="site-nav" className="nav__links">
               {LINKS.map((l) => (
                 <li key={l.label}>
                   <NavLink
                     to={l.to}
                     end={l.end}
-                    className={({ isActive }) =>
-                      `nav__link ${isActive && !open ? 'nav__link--active' : ''}`
-                    }
+                    className={({ isActive }) => `nav__link ${isActive ? 'nav__link--active' : ''}`}
                     onClick={close}
                   >
-                    {l.label}
+                    <span className="nav__link-label">{l.label}</span>
+                    <span className="nav__link-arrow">→</span>
                   </NavLink>
                 </li>
               ))}
@@ -97,6 +115,12 @@ export default function Navbar() {
               </li>
             </ul>
           </nav>
+
+          <div
+            className={`nav__backdrop ${open ? 'nav__backdrop--show' : ''}`}
+            onClick={close}
+            aria-hidden="true"
+          ></div>
         </div>
       </header>
     </>

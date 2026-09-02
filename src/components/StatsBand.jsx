@@ -9,7 +9,7 @@ export default function StatsBand({ data }) {
           <Reveal key={s.label} delay={i * 100}>
             <div className="num">
               <b>
-                <Counter to={s.to} suffix={s.suffix} duration={1500 + i * 200} />
+                <Counter to={s.to} suffix={s.suffix} duration={1500 + i * 200} group={s.group !== false} />
               </b>
               <span>{s.label}</span>
             </div>

@@ -36,7 +36,7 @@ export default function Home() {
 
       <StatsBand
         data={[
-          { to: 2002, suffix: '', label: 'Incorporated' },
+          { to: 2002, suffix: '', label: 'Incorporated', group: false },
           { to: 24, suffix: '+', label: 'Years in Business' },
           { to: 464616, suffix: '', label: 'RC Number' },
           { to: 6, suffix: '', label: 'Service Lines' },
