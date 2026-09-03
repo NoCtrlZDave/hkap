@@ -51,15 +51,19 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar ${solid ? 'navbar--solid' : ''}`}>
+      <header className={`navbar ${solid ? "navbar--solid" : ""}`}>
         <div className="container navbar__inner">
           <NavLink to="/" className="brand" onClick={close}>
-            <img className="brand__mark" src={images.logo} alt="HKAP Limited logo" />
+            <img
+              className="brand__mark"
+              src={images.logo}
+              alt="HKAP Limited logo"
+            />
             <span>
               <span className="brand__text">
                 HKAP <span>LIMITED</span>
               </span>
-              <div className="brand__sub">Recycling &amp; Energy</div>
+              <div className="brand__sub">Energy &amp; Recycling </div>
             </span>
           </NavLink>
 
@@ -67,13 +71,22 @@ export default function Navbar() {
             <ul className="nav__links">
               {LINKS.map((l) => (
                 <li key={l.label}>
-                  <NavLink to={l.to} end={l.end} className={linkClass} onClick={close}>
+                  <NavLink
+                    to={l.to}
+                    end={l.end}
+                    className={linkClass}
+                    onClick={close}
+                  >
                     {l.label}
                   </NavLink>
                 </li>
               ))}
               <li>
-                <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
+                <NavLink
+                  className="nav__link nav__link--cta"
+                  to="/contact"
+                  onClick={close}
+                >
                   Start a Project
                 </NavLink>
               </li>
@@ -99,8 +112,8 @@ export default function Navbar() {
 
       <nav
         aria-label="Mobile primary"
-        aria-hidden={open ? 'false' : 'true'}
-        className={`nav__panel ${open ? 'nav__panel--open' : ''}`}
+        aria-hidden={open ? "false" : "true"}
+        className={`nav__panel ${open ? "nav__panel--open" : ""}`}
       >
         <div className="nav__panel-head">
           <span className="nav__panel-brand">Menu</span>
@@ -131,7 +144,11 @@ export default function Navbar() {
           ))}
 
           <li>
-            <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
+            <NavLink
+              className="nav__link nav__link--cta"
+              to="/contact"
+              onClick={close}
+            >
               Start a Project
             </NavLink>
           </li>
@@ -139,10 +156,10 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`nav__backdrop ${open ? 'nav__backdrop--show' : ''}`}
+        className={`nav__backdrop ${open ? "nav__backdrop--show" : ""}`}
         onClick={close}
         aria-hidden="true"
       ></div>
     </>
-  )
+  );
 }
