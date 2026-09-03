@@ -38,13 +38,16 @@ export default function Navbar() {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth > 1200) setOpen(false)
+      if (window.innerWidth > 1024) setOpen(false)
     }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
   const close = () => setOpen(false)
+
+  const linkClass = ({ isActive }) =>
+    `nav__link ${isActive ? 'nav__link--active' : ''}`
 
   return (
     <>
@@ -59,6 +62,23 @@ export default function Navbar() {
               <div className="brand__sub">Recycling &amp; Energy</div>
             </span>
           </NavLink>
+
+          <nav aria-label="Primary" className="nav__desktop">
+            <ul className="nav__links">
+              {LINKS.map((l) => (
+                <li key={l.label}>
+                  <NavLink to={l.to} end={l.end} className={linkClass} onClick={close}>
+                    {l.label}
+                  </NavLink>
+                </li>
+              ))}
+              <li>
+                <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
+                  Start a Project
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
 
           {!open && (
             <button
@@ -78,7 +98,7 @@ export default function Navbar() {
       </header>
 
       <nav
-        aria-label="Primary"
+        aria-label="Mobile primary"
         aria-hidden={open ? 'false' : 'true'}
         className={`nav__panel ${open ? 'nav__panel--open' : ''}`}
       >
@@ -101,7 +121,7 @@ export default function Navbar() {
               <NavLink
                 to={l.to}
                 end={l.end}
-                className={({ isActive }) => `nav__link ${isActive ? 'nav__link--active' : ''}`}
+                className={linkClass}
                 onClick={close}
               >
                 <span className="nav__link-label">{l.label}</span>

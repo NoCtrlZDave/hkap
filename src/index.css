@@ -368,6 +368,40 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 1100px) {
+  .brand__mark {
+    width: 72px;
+    height: 72px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand__text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand__mark {
+    width: 60px;
+    height: 60px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand__text {
+    font-size: 0.95rem;
+  }
+
+  .brand__sub {
+    font-size: 0.5rem;
+  }
+}
+
 .nav__links {
   display: flex;
   align-items: center;
@@ -381,6 +415,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.88rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
   transition: color 0.3s ease;
 }
 
@@ -448,6 +483,18 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.nav__panel {
+  display: none;
+}
+
+.nav__desktop {
+  margin-left: auto;
+}
+
+.nav__desktop .nav__links {
+  justify-content: flex-end;
+}
+
 .nav__toggle span {
   width: 26px;
   height: 2.5px;
@@ -455,7 +502,28 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--white);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .nav__links {
+    gap: 2px;
+  }
+
+  .nav__link {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .nav__link--cta {
+    margin-left: 6px;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav__desktop {
+    display: none;
+  }
+
   .nav__toggle {
     display: flex;
   }
@@ -493,6 +561,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-102%);
     transition: transform 0.45s var(--ease-out);
     overflow-y: auto;
+    pointer-events: auto;
   }
 
   .nav__panel--open {
@@ -869,15 +938,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 150px;
     padding-bottom: 210px;
   }
-  .hero__stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .stat:nth-child(2) {
-    border-right: none;
-  }
-  .stat:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  }
 }
 
 @media (max-width: 620px) {
@@ -889,15 +949,15 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
   }
   .stat {
-    padding: 16px 12px;
+    padding: 16px 8px;
     text-align: center;
   }
   .stat__num {
-    font-size: clamp(1.4rem, 6vw, 1.7rem);
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
   }
   .stat__label {
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
     margin-top: 4px;
   }
 }
