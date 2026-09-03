@@ -114,6 +114,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <span>&copy; {new Date().getFullYear()} HKAP Limited. All rights reserved.</span>
+          <span>Designed by <a href="https://chetamtech.com" target="_blank" rel="noopener noreferrer">Chetam Tech</a></span>
           <span>TIKVAH &mdash; Pride of Africa.</span>
         </div>
       </div>

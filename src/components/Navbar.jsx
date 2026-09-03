@@ -74,55 +74,55 @@ export default function Navbar() {
               <span></span>
             </button>
           )}
-
-          <nav
-            aria-label="Primary"
-            aria-hidden={open ? 'false' : 'true'}
-            className={`nav__panel ${open ? 'nav__panel--open' : ''}`}
-          >
-            <div className="nav__panel-head">
-              <span className="nav__panel-brand">Menu</span>
-              <button
-                type="button"
-                className="nav__close"
-                onClick={close}
-                aria-label="Close navigation"
-              >
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-
-            <ul id="site-nav" className="nav__links">
-              {LINKS.map((l) => (
-                <li key={l.label}>
-                  <NavLink
-                    to={l.to}
-                    end={l.end}
-                    className={({ isActive }) => `nav__link ${isActive ? 'nav__link--active' : ''}`}
-                    onClick={close}
-                  >
-                    <span className="nav__link-label">{l.label}</span>
-                    <span className="nav__link-arrow">→</span>
-                  </NavLink>
-                </li>
-              ))}
-
-              <li>
-                <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
-                  Start a Project
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-
-          <div
-            className={`nav__backdrop ${open ? 'nav__backdrop--show' : ''}`}
-            onClick={close}
-            aria-hidden="true"
-          ></div>
         </div>
       </header>
+
+      <nav
+        aria-label="Primary"
+        aria-hidden={open ? 'false' : 'true'}
+        className={`nav__panel ${open ? 'nav__panel--open' : ''}`}
+      >
+        <div className="nav__panel-head">
+          <span className="nav__panel-brand">Menu</span>
+          <button
+            type="button"
+            className="nav__close"
+            onClick={close}
+            aria-label="Close navigation"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <ul id="site-nav" className="nav__links">
+          {LINKS.map((l) => (
+            <li key={l.label}>
+              <NavLink
+                to={l.to}
+                end={l.end}
+                className={({ isActive }) => `nav__link ${isActive ? 'nav__link--active' : ''}`}
+                onClick={close}
+              >
+                <span className="nav__link-label">{l.label}</span>
+                <span className="nav__link-arrow">→</span>
+              </NavLink>
+            </li>
+          ))}
+
+          <li>
+            <NavLink className="nav__link nav__link--cta" to="/contact" onClick={close}>
+              Start a Project
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+
+      <div
+        className={`nav__backdrop ${open ? 'nav__backdrop--show' : ''}`}
+        onClick={close}
+        aria-hidden="true"
+      ></div>
     </>
   )
 }
