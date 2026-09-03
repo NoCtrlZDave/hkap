@@ -94,7 +94,7 @@ export default function Home() {
 
       <WhyChoose count={3} />
 
-      <Clients />
+    
     </>
   )
 }
