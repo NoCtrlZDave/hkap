@@ -104,11 +104,11 @@ export default function Clients() {
         <Reveal>
           <span className="kicker">Trusted By</span>
           <h2 className="sec-title">
-            Clients &amp; <span className="serif">Partners</span>
+            Clients &amp; <span className="serif">Partners</span> over the year's
           </h2>
           <p className="sec-sub">
             A track record built with operators and institutions we are proud to
-            serve across Nigeria and West Africa.
+            serve across Nigeria and West Africa over the years.
           </p>
         </Reveal>
       </div>
